@@ -1,0 +1,109 @@
+[
+  {
+    "rule_id": "RULE_6_1_A",
+    "clause_reference": "Rule 6(1)(a), Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Manufacturer / Packer / Importer Name & Address",
+    "field_key": "manufacturer_details",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "Every package shall bear the name and complete physical address of the manufacturer, packer, or importer.",
+    "is_active": true,
+    "parameters": {
+      "required_elements": ["name", "address"],
+      "minimum_address_length": 15,
+      "address_keywords": ["pvt", "ltd", "plot", "road", "street", "industrial", "midc", "post", "dist", "state", "pin", "mfg", "manufactured by", "packed by", "imported by"]
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_B",
+    "clause_reference": "Rule 6(1)(b), Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Generic or Common Name of Commodity",
+    "field_key": "generic_name",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "The common or generic name of the commodity contained in the package must be clearly specified on the principal display panel.",
+    "is_active": true,
+    "parameters": {
+      "min_length": 3
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_C",
+    "clause_reference": "Rule 6(1)(c) & Rule 13, Legal Metrology Rules, 2011",
+    "title": "Net Quantity Declaration & Standard Metric Units",
+    "field_key": "net_quantity",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "Net quantity shall be declared in standard international metric units (g, kg, ml, L, m, cm, or N) with correct spacing and no non-standard symbols like 'gms', 'kgs', or 'ml.'",
+    "is_active": true,
+    "parameters": {
+      "allowed_units": ["g", "kg", "ml", "l", "m", "cm", "n", "u", "pieces"],
+      "disallowed_units": ["gms", "kgs", "k.g.", "g.", "ml.", "mtrs"]
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_D",
+    "clause_reference": "Rule 6(1)(d) & Second Proviso, Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Month and Year of Manufacture / Packing",
+    "field_key": "mfg_date",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "The month and year in which the commodity is manufactured or pre-packed or imported shall be clearly indicated. A batch number alone does NOT satisfy this rule. Statutory exemption applies to incense sticks (agarbatti / dhoop) and bidis under Rule 6(1) second proviso (Clause g).",
+    "is_active": true,
+    "parameters": {
+      "accepted_formats": ["MM/YYYY", "MM/YY", "MMM YYYY", "DD/MM/YYYY"],
+      "batch_number_substitution_allowed": false,
+      "statutory_exempt_commodities": ["incense sticks", "agarbatti", "agarbathi", "dhoop", "bidis", "bidi", "beedis", "lpg cylinder"]
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_DA",
+    "clause_reference": "Rule 6(1)(da), Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Country of Origin (For Imported Goods)",
+    "field_key": "country_of_origin",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "For imported commodities, the package must prominently mention the Country of Origin or manufacture.",
+    "is_active": true,
+    "parameters": {
+      "applicable_when_imported": true
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_E",
+    "clause_reference": "Rule 6(1)(e), Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Maximum Retail Price (MRP) & Tax Declaration",
+    "field_key": "mrp",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "The retail sale price of the package shall clearly be declared as 'Maximum or Max. Retail Price ₹... inclusive of all taxes' or 'MRP ₹... incl. of all taxes'.",
+    "is_active": true,
+    "parameters": {
+      "mandatory_text_phrases": ["inclusive of all taxes", "incl. of all taxes"],
+      "currency_symbols": ["₹", "rs", "inr", "rupees"]
+    }
+  },
+  {
+    "rule_id": "RULE_6_1_F",
+    "clause_reference": "Rule 6(1)(f), Legal Metrology (Packaged Commodities) Rules, 2011",
+    "title": "Consumer Care Redressal Mechanism",
+    "field_key": "consumer_care",
+    "severity": "MANDATORY_VIOLATION",
+    "description": "Every package shall bear the name, address, telephone number and email address of the designated officer or person who can be contacted in case of consumer complaints.",
+    "is_active": true,
+    "parameters": {
+      "required_contacts": ["phone", "email"],
+      "optional_contacts": ["address"]
+    }
+  },
+  {
+    "rule_id": "RULE_7_FONT_SIZE",
+    "clause_reference": "Rule 7 & Second Schedule, Legal Metrology Rules, 2011",
+    "title": "Minimum Character Height (Font Size in mm)",
+    "field_key": "font_size_compliance",
+    "severity": "WARNING",
+    "description": "The minimum height of numerals and letters in mandatory declarations must satisfy the Second Schedule based on net quantity (e.g. >=2mm up to 200g, >=4mm for 200g-1kg, >=6mm over 1kg).",
+    "is_active": true,
+    "parameters": {
+      "thresholds": [
+        {"max_weight_grams": 200, "min_height_mm": 2.0},
+        {"max_weight_grams": 1000, "min_height_mm": 4.0},
+        {"max_weight_grams": 999999, "min_height_mm": 6.0}
+      ]
+    }
+  }
+]

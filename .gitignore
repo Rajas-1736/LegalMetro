@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments & Virtual Envs
+.env
+.env.local
+.env.*.local
+venv/
+env/
+ENV/
+.venv/
+.pytest_cache/
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Databases & Runtime Uploads
+*.db-journal
+storage_data/uploads/*
+!storage_data/uploads/.gitkeep
+temp_uploads/
+
+# OS and Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Packaging archives
+*.zip
+*.tar.gz
+*.rar

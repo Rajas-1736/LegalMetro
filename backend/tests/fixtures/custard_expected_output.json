@@ -1,0 +1,44 @@
+{
+  "product_name": "Custard Powder",
+  "expected_fields": {
+    "generic_name": {
+      "contains": "Custard",
+      "disallow_barcode_noise": true,
+      "max_length": 60,
+      "min_confidence": 0.7
+    },
+    "net_quantity": {
+      "exact": "100 g",
+      "max_length": 25,
+      "min_confidence": 0.85
+    },
+    "mrp": {
+      "contains_price": "40.00",
+      "contains_tax_phrase": "inclusive of all taxes",
+      "max_length": 45,
+      "min_confidence": 0.85
+    },
+    "mfg_date": {
+      "contains": "02/2026",
+      "max_length": 30,
+      "min_confidence": 0.85
+    },
+    "manufacturer_name": {
+      "contains": "Hindustan Unilever",
+      "max_length": 100,
+      "min_confidence": 0.8
+    },
+    "consumer_care": {
+      "contains_phone": "1800-10-22-221",
+      "contains_email": "lever.care@unilever.com",
+      "max_length": 120,
+      "min_confidence": 0.8
+    }
+  },
+  "scale_expectations": {
+    "max_plausible_font_height_mm": 15.0,
+    "min_required_mm": 2.0
+  },
+  "overall_verdict": "COMPLIANT",
+  "min_compliance_score": 85.0
+}
